@@ -21,18 +21,17 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 
-import lombok.Data;
-import lombok.Builder;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+//import lombok.Data;
+//import lombok.Builder;
+//import lombok.AllArgsConstructor;
+//import lombok.NoArgsConstructor;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+//@Dat
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 public class User {
 
@@ -78,99 +77,101 @@ public class User {
     @ManyToMany(mappedBy = "followers")
     private List<User> following;
 
-    // Use this code if your lombok is not working:
-    // public Long getId() {
-    // return id;
-    // }
+	
+	
 
-    // public String getEmail() {
-    // return email;
-    // }
+//    / Use this code if your lombok is not working:
+     public Long getId() {
+     return id;
+     }
 
-    // public void setEmail(String email) {
-    // this.email = email;
-    // }
+    public String getEmail() {
+     return email;
+     }
 
-    // public String getUsername() {
-    // return username;
-    // }
+     public void setEmail(String email) {
+     this.email = email;
+     }
 
-    // public void setUsername(String username) {
-    // this.username = username;
-    // }
+     public String getUsername() {
+    return username;
+     }
 
-    // public String getPassword() {
-    // return password;
-    // }
+     public void setUsername(String username) {
+     this.username = username;
+     }
 
-    // public void setPassword(String password) {
-    // this.password = password;
-    // }
+    public String getPassword() {
+     return password;
+     }
 
-    // public String getFirstName() {
-    // return firstName;
-    // }
+     public void setPassword(String password) {
+     this.password = password;
+    }
 
-    // public void setFirstName(String firstName) {
-    // this.firstName = firstName;
-    // }
+     public String getFirstName() {
+     return firstName;
+    }
 
-    // public String getLastName() {
-    // return lastName;
-    // }
+     public void setFirstName(String firstName) {
+     this.firstName = firstName;
+     }
 
-    // public void setLastName(String lastName) {
-    // this.lastName = lastName;
-    // }
+     public String getLastName() {
+     return lastName;
+     }
 
-    // public int getActive() {
-    // return active;
-    // }
+     public void setLastName(String lastName) {
+     this.lastName = lastName;
+     }
 
-    // public void setActive(int active) {
-    // this.active = active;
-    // }
+     public int getActive() {
+     return active;
+     }
 
-    // public Date getCreatedAt() {
-    // return createdAt;
-    // }
+     public void setActive(int active) {
+     this.active = active;
+    }
 
-    // public void setCreatedAt(Date createdAt) {
-    // this.createdAt = createdAt;
-    // }
+     public Date getCreatedAt() {
+     return createdAt;
+     }
 
-    // public Set<Role> getRoles() {
-    // return roles;
-    // }
+     public void setCreatedAt(Date createdAt) {
+     this.createdAt = createdAt;
+     }
 
-    // public void setRoles(Set<Role> roles) {
-    // this.roles = roles;
-    // }
+     public Set<Role> getRoles() {
+     return roles;
+     }
 
-    // public List<User> getFollowers() {
-    // return followers;
-    // }
+    public void setRoles(Set<Role> roles) {
+     this.roles = roles;
+     }
 
-    // public void setFollowers(List<User> followers) {
-    // this.followers = followers;
-    // }
+     public List<User> getFollowers() {
+     return followers;
+     }
 
-    // public List<User> getFollowing() {
-    // return following;
-    // }
+     public void setFollowers(List<User> followers) {
+     this.followers = followers;
+     }
 
-    // public void setFollowing(List<User> following) {
-    // this.following = following;
-    // }
+     public List<User> getFollowing() {
+     return following;
+     }
 
-    // @Override
-    // public String toString() {
-    // return "User [active=" + active + ", createdAt=" + createdAt + ", email=" +
-    // email + ", firstName=" + firstName
-    // + ", followers=" + followers + ", following=" + following + ", id=" + id + ",
-    // lastName=" + lastName
-    // + ", password=" + password + ", roles=" + roles + ", username=" + username +
-    // "]";
-    // }
+     public void setFollowing(List<User> following) {
+     this.following = following;
+     }
+
+     @Override
+     public String toString() {
+     return "User [active=" + active + ", createdAt=" + createdAt + ", email=" +
+     email + ", firstName=" + firstName
+     + ", followers=" + followers + ", following=" + following + ", id=" + id + ",lastName=" + lastName
+     + ", password=" + password + ", roles=" + roles + ", username=" + username +
+     "]";
+     }
 }
 
