@@ -29,7 +29,7 @@ import org.hibernate.validator.constraints.Length;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
-//@Dat
+//@Data
 //@AllArgsConstructor
 //@NoArgsConstructor
 @Entity

@@ -1,6 +1,5 @@
 package com.tts.TechTalentTwitter.model;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -22,15 +21,15 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+//import lombok.AllArgsConstructor;
+//import lombok.Builder;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
+//
+//@Data
+//@Builder
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 public class Tweet {
 
@@ -44,9 +43,9 @@ public class Tweet {
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private User user;
 
-//	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-//	@JoinTable(name = "tweet_tag", joinColumns = @JoinColumn(name = "tweet_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
-//	private List<Tag> tags;
+	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@JoinTable(name = "tweet_tag", joinColumns = @JoinColumn(name = "tweet_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
+	private List<Tag> tags;
 
 	@NotEmpty(message = "Tweet cannot be empty")
 	@Length(max = 280, message = "Tweet cannot have more than 280 characters")
@@ -68,15 +67,15 @@ public class Tweet {
 	 this.user = user;
 	 }
 
-//	 public List<Tag> getTags() {
-//	 return tags;
-//	 }
-//
-//	 public void setTags(List<Tag> tags) {
-//	 this.tags = tags;
-//	 }
+	 public List<Tag> getTags() {
+	 return tags;
+	 }
 
-     public String getMessage() {
+	 public void setTags(List<Tag> tags) {
+	 this.tags = tags;
+	 }
+
+	 public String getMessage() {
 	 return message;
 	 }
 
@@ -95,9 +94,10 @@ public class Tweet {
 	 @Override
 	 public String toString() {
 	 return "Tweet [createdAt=" + createdAt + ", id=" + id + ", message=" +
-	 message + ", tags=" 
+	 message + ", tags=" + tags
 	 + ", user=" + user + "]";
 	 }
 
 }
+
 
